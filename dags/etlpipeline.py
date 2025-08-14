@@ -29,8 +29,6 @@ with DAG(
         )
         """
 
-
-
     # step 2: Extract the NASA API data(APOD)-Astronomy Picture of the Day(Extract pipeline)
 
 

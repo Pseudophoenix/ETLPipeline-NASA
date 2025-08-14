@@ -9,8 +9,15 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
     ports:
-      - "5432:5432"
+      - "5432:5432" # HOSTPORT:DOCKER_CONTAINER_PORT
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - airflow_network
+
+networks:
+  airflow_network:
+    external: false
+    
+volumnes:
+  postgres_data:
