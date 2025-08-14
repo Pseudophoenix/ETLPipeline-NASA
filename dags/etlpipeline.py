@@ -28,9 +28,12 @@ with DAG(
             media_type VARCHAR(50)
         )
         """
-
+        postgres_hook.run(create_table_query)
     # step 2: Extract the NASA API data(APOD)-Astronomy Picture of the Day(Extract pipeline)
-
+    extract_aod=SimpleHttpOperator(
+        task_id='extract_apod',
+        http_conn_id="nasa_api"
+    )
 
 
     # step 3: Transform the data(Pick the information that i need to save)
